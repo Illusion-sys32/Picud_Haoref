@@ -1,0 +1,267 @@
+:root {
+    --t_c: #fff;
+    --orenge: #ff5e00;
+    --t_c_Main: #252525;
+    --bg_color: #131313;
+    --red: #be0000;
+    --round_btn: 30px;
+    --blue: #0051ff;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 16px; 
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to top, var(--orenge), var(--blue)); 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 8px;
+    border: 3px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg_color);
+    color: var(--t_c);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    padding: 20px;
+    margin: 0%;
+    display: flex;
+    
+    justify-content: space-between; /* Space between logo and settings */
+    align-items: center; /* Center items vertically */
+}
+
+/* Container for centered content */
+.container {
+
+    max-width: 1200px;
+    
+    padding: 0 20px;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    display: grid;
+    justify-items: center;
+    height: 115vh;
+
+}
+.head {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+    left: 100vw;
+}
+
+/* Style for the logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+/* Settings container */
+.links {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.links a {
+    width: max-content;
+    height: max-content;
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--t_c);
+    margin-right: 30px;
+    position: relative; /* Relative positioning for the link */
+}
+.links a:first-child {
+    margin-right: 10px;
+}
+
+.links a::before {
+    content: '';
+    width: 100%; /* Full width of the link */
+    height: 5px; /* Height of the underline */
+    background-color: aqua; /* Color of the underline */
+    display: block; /* Block-level element */
+    position: absolute; /* Positioned relative to the link */
+    bottom: -5px; /* Position just below the link text */
+    left: 0; /* Align to the left of the link */
+    transform: scaleX(0); /* Start with a partial underline */
+    transform-origin: bottom right; /* Set the transform origin */
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out; /* Smooth transition */
+}
+
+.links a:hover::before {
+    transform: scaleX(1); /* Expand the underline on hover */
+    transform-origin: bottom left; /* Animate from left to right */
+    background-color: var(--orenge); /* Change color on hover */
+}
+
+/* Style for the logo image */
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Style for the header text */
+.logo h1 {
+    color: #fff;
+    font-size: 28px;
+    margin-right: 20px;
+}
+.noPress {
+    background-color: #252525;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.noPress:hover {
+    background-color: var(--blue);
+    transform: translateY(-2px);
+}
+.press{
+    background-color: var(--orenge);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+.press:hover {
+    background-color: var(--blue);
+    transform: translateY(-2px);
+}
+.c {
+    max-height: 300px; /* Adjust as needed */
+    overflow-y: auto;  /* Enable scrolling if content overflows */
+    padding: 10px;
+
+}
+.faq-category button {
+    margin: 10px 10px 20px 10px; /* Adjust bottom margin for better spacing */
+}
+/* FAQ Section Styling */
+details {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+summary {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+summary:hover {
+    color: var(--orenge);
+    transition: all 0.3s ease-in-out ;
+}
+details[open] {
+    background-color: #444;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
+section a {
+    color: var(--t_c);
+}
+section h1 {
+    align-self: center;
+    font-size: 42px;
+}
+section h2{
+
+    font-size: 42px;
+}
+details p {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f1f1f1;
+    transition: color 0.3s ease;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    padding: 20px;
+    position: fixed;
+    bottom: -3%;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Container for footer text */
+.container-f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.visible {
+    display: flex;
+}
+.unVisible {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    footer {
+        bottom: -5%; /* Offset footer by -5% from the bottom */
+    }
+    .logo h1{
+        font-size: 18px;
+    }
+}

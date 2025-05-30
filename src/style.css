@@ -1,0 +1,288 @@
+/* Reset some default styles */
+:root {
+    --t_c: #fff; /* Define the custom property --t_c with the value #fff */
+    --orenge: #ff5e00;
+    --t_c_Main:#252525;
+    --bg_color: #131313;
+    --red: #be0000;
+    --round_btn: 30px;
+}
+::-webkit-scrollbar {
+    width: 20px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background:linear-gradient(to top, var(--orenge), var(--blue)); /* Background color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #222424; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid #f0f0f0; /* Padding around the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #141414; /* Darker color on hover */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg_color);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* Style for header */
+header {
+    background-color: #333;
+    padding: 20px;
+    margin: 0%;
+    display: flex;
+    
+    justify-content: space-between; /* Space between logo and settings */
+    align-items: center; /* Center items vertically */
+}
+
+/* Container for centered content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    
+    padding: 0 20px;
+}
+.head {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+    left: 100vw;
+}
+
+/* Style for the logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+/* Settings container */
+.links {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.links a {
+    width: max-content;
+    height: max-content;
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--t_c);
+    margin-right: 30px;
+    position: relative; /* Relative positioning for the link */
+}
+.links a:first-child {
+    margin-right: 10px;
+}
+
+.links a::before {
+    content: '';
+    width: 100%; /* Full width of the link */
+    height: 5px; /* Height of the underline */
+    background-color: aqua; /* Color of the underline */
+    display: block; /* Block-level element */
+    position: absolute; /* Positioned relative to the link */
+    bottom: -5px; /* Position just below the link text */
+    left: 0; /* Align to the left of the link */
+    transform: scaleX(0); /* Start with a partial underline */
+    transform-origin: bottom right; /* Set the transform origin */
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out; /* Smooth transition */
+}
+
+.links a:hover::before {
+    transform: scaleX(1); /* Expand the underline on hover */
+    transform-origin: bottom left; /* Animate from left to right */
+    background-color: var(--orenge); /* Change color on hover */
+}
+
+/* Style for the logo image */
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Style for the header text */
+.logo h1 {
+    color: #fff;
+    font-size: 28px;
+    margin-right: 20px;
+}
+
+/* Main content layout using Grid */
+main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Sidebar and content area layout */
+    gap: 20px; /* Space between columns */
+    margin: 0;
+
+}
+
+/* Main section styling */
+.content {
+    position: relative; /* Position relative to place the image */
+    padding: 20px;
+    color: var(--t_c_Main);
+    right: 17vw;
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+    height: 400px; /* Ensure the section has height */
+    overflow: hidden; /* Prevents overflow */
+}
+
+.content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the section */
+    z-index: 0; /* Place image behind text */
+}
+
+.content h1 {
+    position: relative;
+    font-size: 100px;
+    align-self: center;
+    font-weight: bold;
+
+    color: var(--t_c_Main);
+    z-index: 1; /* Ensure text is above the image */
+}
+.alerts{
+    background-color: #ff5e00;
+}
+.bg {
+    background-color: var(--bg_color);
+    border-radius: 15px;
+}
+.sitoetion{
+    display: flex;
+    flex-direction: column;
+}
+.sitoetion h1{
+    font-size: 56px;
+    position: absolute;
+    top: 10%;
+    color: var(--t_c);
+}
+.sitoetion .span{
+    background-color: var(--red);
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 45%;
+    right: 30%;
+    border-radius: 15px;
+    width: 40vw;
+}
+
+.sitoetion .span a {
+    width: 70%;
+    background-color: var(--bg_color);
+    border-radius: var(--round_btn);
+    border-color: var(--bg_color);
+    height: 80%;
+    text-decoration: none;
+    color: var(--t_c);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    font-size: 38px;
+}
+.sitoetion .span a span:last-child{
+    margin-right: 10px;
+    
+}
+.sitoetion_count{
+    background-color: var(--red);
+    padding: 7px;
+    color: var(--bg_color);
+    font-weight: 700;
+    justify-content: center;
+    font-size: 32px;
+    border-radius: 75px;
+    margin-left: 10px;
+    border-color: var(--bg_color);
+    border-width: 2px;
+}
+.alert_history{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: top;
+    align-self: center;
+}
+/* Sidebar styles */
+.sidebar {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Style for footer */
+footer {
+    background-color: #333;
+    padding: 20px;
+    position: fixed; /* Fixed position at the bottom of the viewport */
+    bottom: 0;
+    width: 100%; /* Full width of the viewport */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center text inside the footer */
+    font-size: 14px; /* Adjust font size if needed */
+}
+
+/* Container for footer text */
+.container-f {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically if necessary */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Stack sidebar and content in a single column */
+    }
+    .content{
+        right: 0%;
+    }
+
+
+    .logo {
+        justify-content: center; /* Center logo for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 18px; /* Smaller font size for very small screens */
+    }
+}

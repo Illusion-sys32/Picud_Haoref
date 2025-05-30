@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פיקוד העורף חקלאות</title>
+    <link rel="shortcut icon" href="Photo/picod_img.ico" type="image/x-icon">
+</head>
+<body>
+    <style>
+        :root {
+            --t_c: #fff;
+            --orenge: #ff5e00;
+            --t_c_Main: #252525;
+            --bg_color: #131313;
+            --red: #be0000;
+            --round_btn: 30px;
+            --blue: #0051ff;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 16px; 
+        }
+
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(to top, var(--orenge), var(--blue)); 
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #333;
+            border-radius: 8px;
+            border: 3px solid #f0f0f0;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg_color);
+            color: var(--t_c);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #333;
+            padding: 20px;
+            margin: 0%;
+            display: flex;
+            
+            justify-content: space-between; /* Space between logo and settings */
+            align-items: center; /* Center items vertically */
+        }
+
+        /* Container for centered content */
+        .container {
+
+            max-width: 1200px;
+            
+            padding: 0 20px;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            display: grid;
+            justify-items: center;
+            height: 100vh;
+
+        }
+        .head {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+
+            left: 100vw;
+        }
+
+        /* Style for the logo container */
+        .logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+        }
+
+        /* Settings container */
+        .links {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .links a {
+            width: max-content;
+            height: max-content;
+            font-size: 24px;
+            text-decoration: none;
+            color: var(--t_c);
+            margin-right: 30px;
+            position: relative; /* Relative positioning for the link */
+        }
+        .links a:first-child {
+            margin-right: 10px;
+        }
+
+        .links a::before {
+            content: '';
+            width: 100%; /* Full width of the link */
+            height: 5px; /* Height of the underline */
+            background-color: aqua; /* Color of the underline */
+            display: block; /* Block-level element */
+            position: absolute; /* Positioned relative to the link */
+            bottom: -5px; /* Position just below the link text */
+            left: 0; /* Align to the left of the link */
+            transform: scaleX(0); /* Start with a partial underline */
+            transform-origin: bottom right; /* Set the transform origin */
+            transition: transform 0.3s ease-out, background-color 0.3s ease-out; /* Smooth transition */
+        }
+
+        .links a:hover::before {
+            transform: scaleX(1); /* Expand the underline on hover */
+            transform-origin: bottom left; /* Animate from left to right */
+            background-color: var(--orenge); /* Change color on hover */
+        }
+
+        /* Style for the logo image */
+        .logo img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        /* Style for the header text */
+        .logo h1 {
+            color: #fff;
+            font-size: 28px;
+            margin-right: 20px;
+        }
+        section{
+            background-color: var(--bg_color);
+            padding: 40px;
+        }
+        section h1{
+            font-size: 52px;
+            text-decoration: underline var(--orenge);
+        }
+        section h2 {
+            font-size: 32px;
+        }
+        .phase{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+        .phase p {
+            font-size: 24px;
+        }
+    </style>
+    <header>
+        <div class="container">
+            <div class="head">
+                <div class="logo">
+                    <img src="Photo/picod_img.png" alt="פיקוד העורף"> <!-- Fixed alt text -->
+                    <h1>פיקוד העורף</h1>
+                </div>
+                <div class="links">
+                    <a href="index.html">דף הבית</a>
+                    <a href="settings.html">הגדרות</a>
+                    <a href="place.html">מקומות</a>
+                    <a href="alerts.html">כל ההתראות</a>
+                    <a href="QandA.html">שאלות ותשובות</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="phase">
+            <h1>חקלאות בשגרת מלחמה</h1>
+            <h2>ישראלים רבים מעוניינים להתנדב לעזור בעבודות חקלאיות במטעים ובמשקים הצמודים לגבול עזה וגבול הצפון. על מנת לבצע את העבודות ולסייע לחקלאות הישראלית תוך שמירה על חיי אדם - יש לעמוד בהנחיות ההתגוננות של פיקוד העורף בשטח. כך תעשו את זה נכון</h2>
+        </div>
+        <div class="phase">
+            <p>בעקבות המצב, יישובים הקרובים לגבול בעוטף עזה ובצפון פונו מבתיהם. להמשך קיומה של פעילות חקלאית באזורים אלה יש משמעות לאומית רחבה לצורך המשך אספקת התוצרת החקלאית במדינה, לצד חשיבות בשמירה על פרנסתם של החקלאים, וישראלים רבים נרתמים בהתנדבות על מנת לסייע לחקלאים לשמר ולתחזק את פעילותם.</p>
+        </div>
+        <div class="phase">
+            <p>אזרחי המדינה נרתמים לעזור ושומרים על חוסנו של העורף הישראלי. עם זאת, חשוב לזכור שאתם מגיעים למקום הסמוך לאזורי לחימה. הכירו את הנחיות ההתגוננות של פיקוד העורף, למדו את זמן ההתגוננות וודאו שאתם יודעים איך להתנהל בזמן התרעה על ירי.</p>
+            <p>שימו לב: לאור הביקוש הרב להתנדב ולעזור לחקלאים בשעה קשה זו, משרד החקלאות משיק אתר המחבר בין החקלאים למתנדבים ומרחיב את הסיוע לארגוני התנדבות נוספים שנרתמו למאמץ הלאומי.</p>
+        </div>
+        <div class="phase">
+            <h2>מעוניינים להתנדב לעבודות חקלאות? זה מה שחשוב לעשות ולדעת</h2>
+            <p>1. וודאו באמצעות הגוף שבו אתם מתנדבים כי באזור שבו אתם מעוניינים להתנדב, ניתן אישור להגיע לצורך פעולות התנדבות בחקלאות ומה ההנחיות הפרטניות לאזור.</p>
+            <p>חשוב לזכור שאתם מגיעים לאזור הקרוב לפעילות הלחימה של צה"ל, ולכן חשוב לבדוק שיש לכם אישור להיכנס ולעבוד באזור שאליו אתם מתכוונים להגיע. לאור המלחמה, מרחב אוגדת עזה בעוטף עזה בדרום המדינה ובאזורים חקלאיים רבים שבין יישובי הגדר וכביש הצפון הישן, </p>
+            <p>לגבול עם מדינת לבנון - הוכרזו שטח צבאי סגור. על כן, בחלק מהקרקעות והמשקים במרחבים אלה רשאיים להיכנס ולעבד את הקרקעות רק בתיאום ואישור עם הגורמים הצבאיים הרלוונטיים.</p>
+            <p>ניתן לקרוא את צו אלוף פיקוד הדרום ביחס לחקלאים וצו אלוף פיקוד הדרום ביחס למתנדבים בחקלאות, בקישור כאן.</p>
+            <p>שימו לב: מאחר שמדובר בשטח צבאי חשוב לדעת שחובה לעזוב את השטח בשעות האור, מאחר שלינה בגזרה אסורה.</p>
+            <p>דגשים לאזור עוטף עזה – ניתן לקיים פעילות חקלאית בהגבלת התקהלות של עד 15 אנשים בשטח פתוח, ללא ציוד מיגון אישי. כמו כן, על מנת להבטיח קבלת התרעות ביישומון פיקוד העורף, יש להוסיף את היישוב בו אתם שוהים כאזור עניין.</p>
+
+        </div>
+        <div class="phase">
+            <p>2. בדקו מה <a href="alerts.html">זמן הכניסה למרחב המוגן</a> באזור שאליו אתם הולכים, וודאו שאתם יודעים  <a href="https://www.oref.org.il/heb/articles/info/preparing-protected-space/1200/">מה המרחב המוגן העומד לרשותכם</a> ושאתם יודעים <a href="https://www.oref.org.il/heb/articles/info/iron-swords/1105/">כיצד לפעול בעת קבלת התרעה בשטח פתוח.</a></p>
+        </div>
+        <div class="phase">
+            <p>3. הורידו את אפליקציית פיקוד העורף כדי לקבל התרעות בהתאם למיקומכם. בעת היציאה לשטח, חשוב להזין ידנית את המיקום בו הפעילות מתבצעת, מאחר שקליטת ה-GPS בשטחי החקלאות עלולה להיות לא מדויקת.</p>
+        </div>
+        <div class="phase">
+            <p>4. בדקו כי הגוף שדרכו אתם מתנדבים הוא גוף מורשה לניהול מתנדבים המספק כיסוי ביטוחי.</p>
+            <p>5.<a href="https://www.idf.il/108807"> לפני צאתכם התעדכנו בשינויים בהסדרי התנועה בכבישי עוטף עזה.</a></p>
+        </div>
+        <div class="phase">
+            <h2>הנחיות בעת קבלת התרעה בשטח פתוח</h2>
+            <p>אתם עתידים לבצע את הפעילות החקלאית בשטח פתוח. כלומר, ייתכן שלא תשמעו התרעה מצופר של פיקוד העורף כדי לוודא שתקבלו התרעות,<a href="https://onelink.to/8p5wpq"> יש להוריד את יישומון פיקוד העורף</a>, שהוא היחיד שמספק התרעה בשטחים פתוחים.</p>
+            <p>לפני הפעילות, על החקלאי להעביר תדריך למתנדבים בנושא הנחיות ההתנהגות בעת קבלת התרעה. אם יש יכולת להגיע למרחב מוגן בזמן ההתגוננות, על החקלאי להסב את תשומת לבם של המתנדבים למרחב מוגן זה. בעת קבלת התרעה, יש לעבור למרחב המוגן ולהישאר בו 10 דקות.</p>
+            <p>אם אין יכולת להגיע למרחב מוגן בזמן ההתגוננות, עליכם להתגונן בהתאם להנחיות בשטח פתוח – לשכב על הקרקע ולהגן על הראש באמצעות הידיים למשך 10 דקות.</p>
+
+        </div>
+        <div class="phase">
+            <h2>איך מתבצע הליך היידוע ואישור ההתנדבות?</h2>
+            <p>במרחב עוטף ישראל, על החקלאים שרוצים להכניס מתנדבים לשטחם החקלאי להגיש בקשה לרשות המקומית עד השעה 13:00 ביום שלפני כניסת המתנדבים על מנת שניתן יהיה לתאם את כניסתם וליווים לשטח. על החקלאי ועל המתנדבים לוודא שהתקבל האישור עד השעה 23:00 ביום שלפני כניסתם לשטח. <b>אם לא התקבל אישור – אין להגיע לשטח.</b></p>
+            <p>על החקלאי לקיים תדריך למתנדבים על מדיניות ההתגוננות באזור כולל הסבר על זמן ההתגוננות ונוהל ההתגוננות על פי כללי הכי מוגן שיש. על החקלאי להסביר למתנדבים מה הם צריכים לעשות בזמן ירי רקטות וטילים.
+            </p>
+        </div>
+
+    </section>
+</body>
+</html>

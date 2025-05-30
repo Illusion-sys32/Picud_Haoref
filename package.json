@@ -1,0 +1,46 @@
+{
+  "name": "picud_haoref",
+  "version": "1.0.0",
+  "description": "picoud haoref original app",
+  "author": "picud haoref isreal",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.isreal.picudhaoref",
+    "productName": "Pikud Haoref",
+    "asar": true,
+    "win": {
+      "target": "nsis",
+      "icon": "E:/APP.JS/build/picod_img.ico",
+      "sign": false,
+      "certificateFile": null,
+      "certificatePassword": null
+    },
+    "files": [
+      "dist/**/*",
+      "src/**/*",
+      "node_modules/**/*",
+      "main.js",
+      "preload.js",
+      "package.json",
+      "python_scripts/**/*"
+    ],
+    "extraFiles": [
+      {
+        "from": "python_scripts/",
+        "to": "python_scripts/"
+      }
+    ]
+  },
+  "dependencies": {
+    "iplocation": "^7.2.0"
+  },
+  "devDependencies": {
+    "electron": "^32.1.2",
+    "electron-builder": "^25.0.5",
+    "electron-packager": "^17.1.2"
+  }
+}

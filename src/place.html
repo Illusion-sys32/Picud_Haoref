@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פיקוד העורף מקומות</title>
+    <link rel="stylesheet" href="place.css">
+    <link rel="shortcut icon" href="Photo/picod_img.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="head">
+                <div class="logo">
+                    <img src="Photo/picod_img.png" alt="picod haoref"> <!--fix that-->
+                    <h1>פיקוד העורף</h1>
+                </div>
+                <div class="links">
+                    <a href="index.html">דף הבית</a>
+                    <a href="settings.html">הגדרות</a>
+                    <a href="place.html">מקומות</a>
+                    <a href="alerts.html">כל ההתראות</a>
+                    <a href="QandA.html">שאלות תשובות</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="content">
+                <div class="switch">                 
+                        <h1 class="switch_btn">מקומך הנוכחי</h1>
+                </div>
+                <span class="line"></span>
+                <div class="uPlaceContiner">
+                    <div class="div">                    
+                        <h1 id="city"> <!--where city goes--></h1>
+                    </div>
+
+                    <span class="line"></span>
+
+                    <h2>לקביעת עירך באופן ידני לחץ כאן 👇</h2>
+                    <button class="btn" id="Mplace">מיקום ידני</button>
+                    <h2>לקביעת עירך באופן אוטומטי 👇</h2>
+                    <button class="btn" id="Aplace">מיקום אוטומטי</button>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <section class="content" id="content">
+                <div class="switch">
+                    <h1 class="switch_btn">מקומות העניין</h1>
+                </div>
+                <span class="line"></span>
+                <div class="placeContiner" id="placeContiner">                
+                    <!-- where the palces go -->
+                </div>
+                    
+                <div class="addIbtn">
+                    <button id="addIbtn" class="btn">הוסף מיקום</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>All the rights reserved to Kfir &copy; 2024</p>
+        </div>
+    </footer>
+    <script src="place.js"></script>
+
+    <div class="addIno" id="addI"></div>
+        <div class="addIno" id="fild">
+            <h1>הוסף נקודת עניין</h1>
+            <input type="text" id="text" placeholder="דוגמא:'תל אביב'">
+            <button id="add">הוסף</button>
+        </div>
+    </div>
+    <div class="addIno" id="SetContiner"></div>
+    <div id="SetSelfPlace" class="addIno">
+        <h1> הכנס את מיקומך הנוכחי 👇</h1>
+        <input type="text" id="SetText" placeholder="דוגמא: 'תל אביב'">
+        <button id="set">שנה</button>
+    </div>
+</body>
+</html>
+

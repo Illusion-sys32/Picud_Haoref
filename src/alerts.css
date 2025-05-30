@@ -1,0 +1,306 @@
+:root {
+    --t_c: #fff; /* Define the custom property --t_c with the value #fff */
+    --orenge: #ff5e00;
+    --t_c_Main:#252525;
+    --bg_color: #131313;
+    --red: #be0000;
+    --round_btn: 30px;
+    --blue: #0051ff;
+}
+::-webkit-scrollbar {
+    width: 20px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background:linear-gradient(to top, var(--orenge), var(--blue)); /* Background color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #222424; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid #f0f0f0; /* Padding around the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #141414; /* Darker color on hover */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg_color);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+/* Style for header */
+header {
+    background-color: #333;
+    padding: 20px;
+    margin: 0%;
+    display: flex;
+    
+    justify-content: space-between; /* Space between logo and settings */
+    align-items: center; /* Center items vertically */
+}
+
+/* Container for centered content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    
+    padding: 0 20px;
+}
+.head {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+    left: 100vw;
+}
+
+/* Style for the logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+/* Settings container */
+.links {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.links a {
+    width: max-content;
+    height: max-content;
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--t_c);
+    margin-right: 30px;
+    position: relative; /* Relative positioning for the link */
+}
+.links a:first-child {
+    margin-right: 10px;
+}
+
+.links a::before {
+    content: '';
+    width: 100%; /* Full width of the link */
+    height: 5px; /* Height of the underline */
+    background-color: aqua; /* Color of the underline */
+    display: block; /* Block-level element */
+    position: absolute; /* Positioned relative to the link */
+    bottom: -5px; /* Position just below the link text */
+    left: 0; /* Align to the left of the link */
+    transform: scaleX(0); /* Start with a partial underline */
+    transform-origin: bottom right; /* Set the transform origin */
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out; /* Smooth transition */
+}
+
+.links a:hover::before {
+    transform: scaleX(1); /* Expand the underline on hover */
+    transform-origin: bottom left; /* Animate from left to right */
+    background-color: var(--orenge); /* Change color on hover */
+}
+
+/* Style for the logo image */
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Style for the header text */
+.logo h1 {
+    color: #fff;
+    font-size: 28px;
+    margin-right: 20px;
+}
+main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Sidebar and content area layout */
+    gap: 20px; /* Space between columns */
+    margin: 0;
+
+
+}
+
+/* Main section styling */
+.content {
+    position: relative; /* Position relative to place the image */
+
+    color: var(--t_c_Main);
+    right: 17vw;
+    width: 100vw;
+    justify-content: center;
+    display: grid;
+    height: 80vh; /* Ensure the section has height */
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevents overflow */
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    font-size: 48px;
+    margin: 0;
+    position: relative;
+    bottom: 7vh;
+    color: var(--t_c);
+    justify-self: center;
+}
+.title h2{
+    align-self: center;
+}
+.title h3{
+    font-size: 42px;
+    margin: 0;
+}
+/* Basic style for search input */
+input[type="search"] {
+    width: 130%; /* Full width */
+    padding: 10px; /* Space inside the input */
+    border: 2px solid #ddd; /* Border color and thickness */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 32px; /* Font size */
+    align-self: center;
+    border-radius: 30px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Placeholder text styling */
+input[type="search"]::placeholder {
+    color: var(--orenge); /* Placeholder text color */
+    
+    font-style: italic; /* Placeholder text style */
+}
+
+/* Focus state styling */
+input[type="search"]:focus {
+    border-color: #007bff; /* Border color when focused */
+    outline: none; /* Remove the default outline */
+}
+
+/* Clear button styling (for modern browsers) */
+input[type="search"]::-webkit-search-clear-button {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none; /* Remove default styling */
+}
+
+/* Search button styling (for modern browsers) */
+input[type="search"]::-webkit-search-submit-button {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none; /* Remove default styling */
+}
+.title button{
+    width: 50%;
+    padding: 10px; /* Space inside the input */
+    border: 2px solid #ddd; /* Border color and thickness */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 32px; /* Font size */
+    align-self: center;
+    border-radius: 30px;
+    margin-top: 15px;
+    color: var(--orenge);
+    background-color: var(--blue);
+}
+.title button:hover{
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+#alerts{
+    display: flex;
+    background-color: #0051ff;
+    border-width: 3px;
+
+    width: 80%;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    border: aliceblue;
+    
+}
+#alertsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 20vw;
+    background-color: #333333;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    #alertsContainer {
+        padding: 10px;
+        max-width: 95%;
+    }
+}
+
+.alert {
+    border: 2px solid var(--t_c);
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+    padding: 5rem; /* Adjusted for better consistency */
+    width: auto; /* Adjusted for better layout */
+    color: var(--t_c);
+    transition: transform 0.2s ease-in-out;
+}
+
+.alert:hover {
+    transform: scale(1.1); /* Slightly less pronounced effect */
+}
+
+.alert h1, .alert h3 {
+    font-size: 32px;
+    align-self: center;
+    margin: 5px 0;
+    color: #ff5656;
+}
+
+.alert h2 {
+    font-size: 42px;
+    align-self: center;
+    margin: 10px 0;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Stack sidebar and content in a single column */
+    }
+    .content{
+        right: 0%;
+    }
+
+
+    .logo {
+        justify-content: center; /* Center logo for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 18px; /* Smaller font size for very small screens */
+    }
+}

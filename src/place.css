@@ -1,0 +1,440 @@
+:root {
+    --t_c: #fff;
+    --orenge: #ff5e00;
+    --t_c_Main: #252525;
+    --bg_color: #131313;
+    --red: #be0000;
+    --round_btn: 30px;
+    --blue: #0051ff;
+}
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 20px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background:linear-gradient(to top, var(--orenge), var(--blue)); /* Background color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #222424; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid #f0f0f0; /* Padding around the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #141414; /* Darker color on hover */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg_color);
+    overflow: hidden; /* Hide both x and y overflow */
+}
+
+/* Style for header */
+header {
+    background-color: #333;
+    padding: 20px;
+    margin: 0%;
+    display: flex;
+    
+    justify-content: space-between; /* Space between logo and settings */
+    align-items: center; /* Center items vertically */
+}
+
+/* Container for centered content */
+.container {
+
+    max-width: 1200px;
+    
+    padding: 0 20px;
+}
+.head {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+    left: 100vw;
+}
+
+/* Style for the logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+/* Settings container */
+.links {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.links a {
+    width: max-content;
+    height: max-content;
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--t_c);
+    margin-right: 30px;
+    position: relative; /* Relative positioning for the link */
+}
+.links a:first-child {
+    margin-right: 10px;
+}
+
+.links a::before {
+    content: '';
+    width: 100%; /* Full width of the link */
+    height: 5px; /* Height of the underline */
+    background-color: aqua; /* Color of the underline */
+    display: block; /* Block-level element */
+    position: absolute; /* Positioned relative to the link */
+    bottom: -5px; /* Position just below the link text */
+    left: 0; /* Align to the left of the link */
+    transform: scaleX(0); /* Start with a partial underline */
+    transform-origin: bottom right; /* Set the transform origin */
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out; /* Smooth transition */
+}
+
+.links a:hover::before {
+    transform: scaleX(1); /* Expand the underline on hover */
+    transform-origin: bottom left; /* Animate from left to right */
+    background-color: var(--orenge); /* Change color on hover */
+}
+
+/* Style for the logo image */
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Style for the header text */
+.logo h1 {
+    color: #fff;
+    font-size: 28px;
+    margin-right: 20px;
+}
+main {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 2fr 2fr; /* Sidebar and content area layout */
+    gap: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* Main section styling */
+/* Adjust the content container */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Start aligning items at the top */
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 20px; /* Add some padding at the bottom */
+    position: relative;
+}
+
+/* Style for .Iplace to fit well within the flex container */
+
+/* Container for the switch buttons */
+.switch {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for each button */
+.switch_btn {
+    background: none;
+    border: none;
+    color: var(--t_c);
+    font-size:38px;
+    font-weight: bold;
+    margin: 0 15px;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    height: max-content;
+    text-transform: uppercase;
+}
+
+/* Hover and focus effects for buttons */
+.switch_btn:hover,
+.switch_btn:focus {
+    color: #dbdada;
+    text-decoration: none;
+}
+
+/* Pseudo-element for underline effect */
+.switch_btn::before {
+    content: '';
+    width: 100%;
+    height: 5px;
+    background-color: aqua;
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+/* Expanded underline on hover */
+.switch_btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    background-color: var(--orenge);
+}
+
+/* Style for the line */
+.line {
+    width: 100%;
+    height: 0.3vh;
+    background: linear-gradient(to right, var(--t_c_Main), var(--t_c), var(--t_c_Main));
+    margin-top: 10px; /* Adjust space between the line and the buttons */
+    margin-bottom: 0; /* Ensure no additional margin below the line */
+}
+.Iplace {
+    position: relative;
+    padding: 10px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    border: 10px solid transparent;
+}
+
+/* Create the gradient border effect */
+.Iplace::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it absolutely within the parent */
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1%;
+    background: linear-gradient(to right, var(--t_c_Main), var(--t_c), var(--t_c_Main)); /* Gradient border */
+    z-index: -1; /* Place it behind the content */
+    border-radius: 5px; /* Optional: rounded corners if needed */
+}
+.div{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+
+}
+.uPlaceContiner {
+    min-height: max-content;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.uPlaceContiner h2 {
+    font-size: 28px;
+    color: var(--t_c);
+    font-weight: 500;
+}
+.placeContiner{
+    width: 90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: max-content;
+}
+.tuchImg{
+    display: flex;
+    width: 40%;
+    justify-content: flex-start;
+}
+.Iplace img{
+    width: 30px;
+    filter: grayscale(100%) invert(100%);
+    height: 30px;
+    align-self: center;
+
+}
+.Iplace h1{
+    color: var(--t_c);
+    font-size: 34px;
+}
+.addIbtn {
+    margin-top: auto; /* Push the button to the bottom of the flex container */
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 9.5vh;
+    max-height: 10vh;
+}
+
+.btn:hover{
+    transform: translateY(-5px);
+
+    background: linear-gradient(to left, var(--orenge), var(--blue));
+    transition: all 0.5s ease-in-out;
+}
+.btn {
+    width: 90%;
+    height: max-content;
+    min-height: max-content;
+    padding: 5%;
+    border-radius: 30px;
+    font-size: 36px;
+    font-weight: 700;
+
+    transition: all 0.5s ease-in-out;
+    color: var(--t_c_Main);
+    background: linear-gradient(to right, var(--orenge), var(--blue));
+}
+.addI {
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    position: fixed; /* Ensure the overlay covers the viewport */
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    display: flex; /* Center content horizontally and vertically */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide any overflow content */
+}
+
+.addI::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Inherit the background color */
+    filter: blur(10px); /* Apply blur effect */
+    z-index: -1; /* Place the blur effect behind the content */
+}
+
+.add {
+    background: var(--bg_color); /* Use a background color for the form */
+    border-radius: 10px; /* Rounded corners for the form */
+    padding: 20px; /* Space inside the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    text-align: center; /* Center align text and elements */
+    max-width: 400px; /* Limit the width of the form */
+    width: 100%; /* Full width up to the max width */
+    z-index: 1000; /* Place the form above the blurred background */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    
+}
+
+/* Style for the heading */
+.add h1 {
+    font-size: 32px;
+    color: var(--t_c); /* Heading color */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+/* Style for the input field */
+.add input[type="text"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Space inside the input field */
+    border: 1px solid var(--t_c); /* Border color matching text color */
+    border-radius: 5px; /* Rounded corners for the input */
+    margin-bottom: 15px; /* Space below the input field */
+    font-size: 28px; /* Font size for readability */
+}
+
+/* Style for the button */
+.add button {
+    background: var(--orenge); /* Button background color */
+    color: var(--t_c); /* Button text color */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Space inside the button */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for readability */
+    transition: transform 0.3s ease-in-out; /* Smooth background color transition */
+}
+
+/* Hover effect for the button */
+.add button:hover {
+    transform: translateY(-5px);
+    
+}
+.addIno{
+    display: none;
+}
+#city {
+    color: var(--t_c);
+    font-size: 36px;
+    font-weight: 700;
+}
+footer {
+    background-color: #333;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Container for footer text */
+.container-f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Stack sidebar and content in a single column */
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .div{
+    top: 15%;
+    }
+    .content {
+        height: auto; /* Allow content area to grow as needed */
+    }
+
+    .logo {
+        justify-content: center; /* Center logo for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 18px; /* Smaller font size for very small screens */
+    }
+}

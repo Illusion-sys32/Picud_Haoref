@@ -1,0 +1,8 @@
+Picud Horef app for windows (currently) 
+
+created using Electron and Python 
+
+Electron for the UI 
+Python for handling HTTPS requests and for it to run lightweight on Background
+
+Developed in 2023 (Doesn't use the latest technology)
